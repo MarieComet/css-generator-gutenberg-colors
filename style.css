@@ -1,5 +1,9 @@
 body {
 	font-family: 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';;
+	color: #261e66;
+}
+h2 {
+    text-align: center;
 }
 .container {
 	max-width: 1080px;
@@ -8,11 +12,49 @@ body {
 pre {
     font-size: 16px;
 }
-.result {
+.wrapper {
     display: flex;
     flex-wrap: wrap;
 }
-.result > div {
-	padding: 15px;
+.wrapper > * {
+	margin: 15px;
 	flex: 0 0 47%;
+}
+fieldset {
+	padding: 15px 20px;
+	border-color: #5c4ae2;
+	min-height: 135px;
+}
+fieldset legend {
+	font-weight: 700;
+	font-size: 18px;
+}
+.color {
+    margin: 0 0 10px 0;
+}
+.submit-wrapper {
+	flex: 0 0 100%;
+	text-align: center;
+}
+input {
+    border-radius: 0px;
+    border: 1px solid #5c4ae2;
+    padding: 5px;
+    margin: 0 0 0 5px;
+}
+input:hover, input:focus {
+	-webkit-box-shadow: 0 0 10px 0 #b0a6ff;
+	box-shadow: 0 0 10px 0 #b0a6ff;
+}
+[type="submit"] {
+	width: 50%;
+	background: #5c4ae2;
+	color: #fff;
+	font-size: 19px;
+	padding: 10px;
+}
+[type="submit"]:hover, [type="submit"]:focus {
+	background-color: #261e66;
+	color: #fff;
+	text-decoration: none;
 }
