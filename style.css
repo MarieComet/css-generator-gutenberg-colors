@@ -6,16 +6,13 @@ body {
 	margin: 0 auto;
 }
 pre {
-    background: #efefef;
-    padding: 15px;
     font-size: 16px;
-    overflow: scroll;
 }
 .result {
     display: flex;
+    flex-wrap: wrap;
 }
 .result > div {
-	margin: 15px;
-	flex: 0 0 50%;
-	overflow: hidden;
+	padding: 15px;
+	flex: 0 0 47%;
 }

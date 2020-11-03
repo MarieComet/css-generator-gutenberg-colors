@@ -2,6 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="prism/prism.css">
+	<script type="text/javascript" src="prism/prism.js"></script>
+
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
 	<title>CSS generator for Gutenberg colors</title>
@@ -47,20 +51,19 @@
 		<div class="result">
 			<div>
 				<h2>CSS</h2>
-				<pre><code id="css-result">nothing yet...</code></pre>
+				<pre><code id="css-result" class="language-css">/* nothing yet... */</code></pre>
 			</div>
 			<div>
-				<h2>SCSS</h2>
-				<pre><code id="sass-result">
-@each $name, $color in $colors {
+				<h2>SASS</h2>
+				<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
+				<pre><code class="language-scss">@each $name, $color in $colors {
 	.has-#{$name}-color {
 		color: $color;
 	}
 	.has-#{$name}-background-color {
 		background-color: $color;
 	}
-}
-				</code></pre>
+}</code></pre>
 			</div>
 		</div>
 	</div>

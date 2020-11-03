@@ -46,7 +46,7 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		} );
 		sass += ' );';
 		cssResult.innerHTML = css;
-		sassResult.insertAdjacentHTML( 'afterbegin', sass);
+		sassResult.innerHTML = sass;
 	}
 
 	const form = document.getElementById( 'generator' );
@@ -55,7 +55,7 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		const colors = getColors();
 		if ( Array.isArray( colors ) && colors.length ) {
 			generateCode( colors );
-			console.log(colors);
+			Prism.highlightAll();
 		}
 	} );
 } );
