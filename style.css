@@ -1,0 +1,21 @@
+body {
+	font-family: 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';;
+}
+.container {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+pre {
+    background: #efefef;
+    padding: 15px;
+    font-size: 16px;
+    overflow: scroll;
+}
+.result {
+    display: flex;
+}
+.result > div {
+	margin: 15px;
+	flex: 0 0 50%;
+	overflow: hidden;
+}

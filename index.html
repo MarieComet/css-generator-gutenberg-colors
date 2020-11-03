@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<title>CSS generator for Gutenberg colors</title>
+</head>
+<body>
+	<div class="container">
+		<h1>CSS generator for Gutenberg colors</h1>
+		<p>Fill the form below : for each color, choose a display name, a code (#000000) and a slug...Magic !</p>
+		<h2>Fill colors</h2>
+		<form id="generator">
+			<fieldset class="color-group">
+				<legend>Color #1</legend>
+				<div class="color">
+					<label for="color_name_1">Color name</label>
+					<input type="text" name="color_name_1" class="color-input" data-type="name">
+				</div>
+				<div class="color">
+					<label for="color_code_1">Color code</label>
+					<input type="text" name="color_code_1" class="color-input" data-type="code">
+				</div>
+				<div class="color">
+					<label for="color_slug_1">Color slug</label>
+					<input type="text" name="color_slug_1" class="color-input" data-type="slug">
+				</div>
+			</fieldset>
+			<fieldset class="color-group">
+				<legend>Color #2</legend>
+				<div class="color">
+					<label for="color_name_2">Color name</label>
+					<input type="text" name="color_name_2" class="color-input" data-type="name">
+				</div>
+				<div class="color">
+					<label for="color_code_2">Color code</label>
+					<input type="text" name="color_code_2" class="color-input" data-type="code">
+				</div>
+				<div class="color">
+					<label for="color_slug_2">Color slug</label>
+					<input type="text" name="color_slug_2" class="color-input" data-type="slug">
+				</div>
+			</fieldset>
+			<input type="submit" name="submit" value="Generate">
+		</form>
+		<div class="result">
+			<div>
+				<h2>CSS</h2>
+				<pre><code id="css-result">nothing yet...</code></pre>
+			</div>
+			<div>
+				<h2>SCSS</h2>
+				<pre><code id="sass-result">
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+				</code></pre>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
