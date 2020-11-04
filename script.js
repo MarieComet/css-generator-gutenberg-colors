@@ -10,17 +10,20 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 	// initial colors counter (2, start at 3)
 	var counter = 3;
 
+	// event on click Add color button
 	addColor.addEventListener( 'click', e => {
 		e.preventDefault();
 		cloneColor();
 	} );
 
+	// event on click Generate button
 	form.addEventListener( 'submit', e => {
 		e.preventDefault();
-		const colors = getColors();
+		const colors = getColors(); // get colors in form
 		if ( Array.isArray( colors ) && colors.length ) {
 			generateCode( colors );
-			Prism.highlightAll();
+			Prism.highlightAll(); // highlight new codes
+			document.getElementById( 'results' ).scrollIntoView( { behavior: 'smooth' } ); // scroll to results
 		}
 	} );
 
