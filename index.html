@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="prism/prism.css">
 	<script type="text/javascript" src="prism/prism.js"></script>
@@ -14,7 +15,8 @@
 	<div class="container">
 		<div class="page-header">
 			<h1>CSS generator for Gutenberg colors</h1>
-			<p>Fill the form below : for each color, choose a display name, a code (#000000) and a slug...Magic !</p>
+			<p>A small tool to generate CSS classes for colors in Gutenberg.</p>
+			<p>Fill the form below : for each color, choose a display name, a code (#000000) and a slug... Magic !</p>
 		</div>
 
 		<form id="generator">
@@ -23,31 +25,31 @@
 				<fieldset class="color-group">
 					<legend>Color #1</legend>
 					<label class="color">
-						Color name
-						<input type="text" class="color-input" data-type="name">
+						Display name
+						<input type="text" class="color-input" data-type="name" placeholder="Red">
 					</label>
 					<label class="color">
-						Color code
-						<input type="text" class="color-input" data-type="code">
+						Code
+						<input type="text" class="color-input" data-type="code" placeholder="#920e0e">
 					</label>
 					<label class="color">
-						Color slug
-						<input type="text" class="color-input" data-type="slug">
+						Slug
+						<input type="text" class="color-input" data-type="slug" placeholder="red">
 					</label>
 				</fieldset>
 				<fieldset class="color-group">
 					<legend>Color #2</legend>
 					<label class="color">
-						Color name
-						<input type="text" class="color-input" data-type="name">
+						Display name
+						<input type="text" class="color-input" data-type="name" placeholder="Green">
 					</label>
 					<label class="color">
-						Color code
-						<input type="text" class="color-input" data-type="code">
+						Code
+						<input type="text" class="color-input" data-type="code" placeholder="#25920e">
 					</label>
 					<label class="color">
-						Color slug
-						<input type="text" class="color-input" data-type="slug">
+						Slug
+						<input type="text" class="color-input" data-type="slug" placeholder="green">
 					</label>
 				</fieldset>
 			</div>
