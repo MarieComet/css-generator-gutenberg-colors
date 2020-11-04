@@ -1,6 +1,7 @@
 body, input, button {
 	font-family: 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';;
 	color: #261e66;
+	font-size: 18px;
 }
 h2 {
 	border-top: 2px solid #b0a6ff;
