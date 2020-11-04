@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 			if ( index !== colors.length - 1 ) {
 				sass += ', '
 			}
-			php += "\tarray(\n\t\t'name' => __( '" + color.name + "', 'textdomain' ),\n\t\t'slug' => '" + color.slug + "',\n\t\t'code' => '" + color.code + "', \n\t),\n"
+			php += "\tarray(\n\t\t'name' => __( '" + color.name + "', 'textdomain' ),\n\t\t'slug' => '" + color.slug + "',\n\t\t'color' => '" + color.code + "', \n\t),\n"
 		} );
 		sass += ' );';
 		php += ') );';
