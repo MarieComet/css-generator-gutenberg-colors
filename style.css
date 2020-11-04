@@ -73,3 +73,15 @@ input:focus, button:focus {
 	color: #fff;
 	text-decoration: none;
 }
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 40px 0;
+    padding: 0;
+}
+nav ul li {
+	margin: 5px 10px;
+}
