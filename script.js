@@ -67,12 +67,16 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		// remove ID and add class
 		clone.removeAttribute( 'id' );
 		clone.setAttribute( 'class', 'color-group' );
-
+		// append clone
 		colorsWrapper.append( clone );
+		// give focus to first input in clone
+		clone.getElementsByTagName('input')[0].focus();
 	}
 
 	function removeColor( e ) {
-		e.parentElement.remove();		
+		e.parentElement.remove();	
+		// give focus to add color button
+		addColor.focus();	
 	}
 
 	/**
