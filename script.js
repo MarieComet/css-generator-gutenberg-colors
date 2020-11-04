@@ -2,10 +2,12 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 
 	const cssResult = document.getElementById( 'css-result' ),
 		  sassResult = document.getElementById( 'sass-result' ),
+		  phpResult = document.getElementById( 'php-result' ),
 		  form = document.getElementById( 'generator' ),
 		  colorsWrapper = document.getElementById( 'colors' ),
 		  addColor = document.getElementById( 'add-color' );
 
+	// initial colors counter (2, start at 3)
 	var counter = 3;
 
 	addColor.addEventListener( 'click', e => {
@@ -72,7 +74,8 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 	*/
 	function generateCode( colors ) {
 		var css = '',
-			sass = '$colors: ( ';
+			sass = '$colors: ( ',
+			php = "add_theme_support( 'editor-color-palette', array(\n";
 
 		colors.forEach( function( color, index ) {
 			css += '.has-' + color.slug + '-background-color {\n\tbackground-color: ' + color.code + ';\n}\n';
@@ -81,10 +84,15 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 			if ( index !== colors.length - 1 ) {
 				sass += ', '
 			}
+			php += "\tarray(\n\t\t'name' => __( '" + color.name + "', 'textdomain' ),\n\t\t'slug' => '" + color.slug + "',\n\t\t'code' => '" + color.code + "', \n\t),\n"
 		} );
 		sass += ' );';
+		php += ') );';
+
+		// insert codes
 		cssResult.innerHTML = css;
 		sassResult.innerHTML = sass;
+		phpResult.innerHTML = php;
 	}
 
 } );
