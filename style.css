@@ -1,28 +1,32 @@
-body {
+body, input, button {
 	font-family: 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';;
 	color: #261e66;
 }
 h2 {
+	border-top: 2px solid #b0a6ff;
+	padding-top: 20px;
+	margin: 40px 0 20px 0;
     text-align: center;
+}
+h3 {
+	text-align: center;
 }
 .container {
 	max-width: 1080px;
 	margin: 0 auto;
 }
-pre {
-    font-size: 16px;
-}
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 15px 15px;
+    grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
 }
-.wrapper > * {
-	margin: 15px;
-	flex: 0 0 47%;
+.page-header {
+	text-align: center;
 }
+
 fieldset {
-	padding: 15px 20px;
-	border-color: #5c4ae2;
+	padding: 15px;
+	border: 2px dotted #5c4ae2;
 	min-height: 135px;
 }
 fieldset legend {
@@ -30,28 +34,39 @@ fieldset legend {
 	font-size: 18px;
 }
 .color {
+	display: block;
     margin: 0 0 10px 0;
 }
 .submit-wrapper {
-	flex: 0 0 100%;
+	margin: 20px 0;
 	text-align: center;
 }
-input {
+input, button {
     border-radius: 0px;
     border: 1px solid #5c4ae2;
-    padding: 5px;
-    margin: 0 0 0 5px;
+    margin: 0 10px 0 10px;
+    padding: 5px 10px;
+    font-size: 19px;
+    color: #5c4ae2;
+    background-color: #fff;
 }
-input:hover, input:focus {
+input:hover, button:hover, input:focus, button:focus {
 	-webkit-box-shadow: 0 0 10px 0 #b0a6ff;
 	box-shadow: 0 0 10px 0 #b0a6ff;
+	background-color: #fff;
 }
+input:focus, button:focus {
+	outline: 1px solid #5c4ae2;
+}
+[type="submit"], button {
+	width: 30%;
+	padding: 10px;
+}
+
 [type="submit"] {
-	width: 50%;
 	background: #5c4ae2;
 	color: #fff;
-	font-size: 19px;
-	padding: 10px;
+	
 }
 [type="submit"]:hover, [type="submit"]:focus {
 	background-color: #261e66;

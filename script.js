@@ -1,13 +1,32 @@
 document.addEventListener( 'DOMContentLoaded', (e) => {
 
-	const colorGroups = document.querySelectorAll( '.color-group' ),
-		  cssResult = document.getElementById( 'css-result' ),
-		  sassResult = document.getElementById( 'sass-result' );
+	const cssResult = document.getElementById( 'css-result' ),
+		  sassResult = document.getElementById( 'sass-result' ),
+		  form = document.getElementById( 'generator' ),
+		  colorsWrapper = document.getElementById( 'colors' ),
+		  addColor = document.getElementById( 'add-color' );
+
+	var counter = 3;
+
+	addColor.addEventListener( 'click', e => {
+		e.preventDefault();
+		cloneColor();
+	} );
+
+	form.addEventListener( 'submit', e => {
+		e.preventDefault();
+		const colors = getColors();
+		if ( Array.isArray( colors ) && colors.length ) {
+			generateCode( colors );
+			Prism.highlightAll();
+		}
+	} );
 
 	/**
 	* Get all fieldset colors, construct array of colors objects, return an array
 	*/
 	function getColors() {
+		const colorGroups = document.querySelectorAll( '.color-group' );
 		const colorArr = [];
 		// for each fieldset, construct and object
 		colorGroups.forEach( function( colorGroup, index ) {
@@ -26,6 +45,25 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		});
 		
 		return colorArr;
+	}
+
+	/**
+	* Duplicate fieldset color : clone last color group element
+	*/
+	function cloneColor() {
+		var lastItem = document.querySelector( '.color-group:last-of-type' ),
+			clone = lastItem.cloneNode( true ),
+			legend = clone.getElementsByTagName( 'legend' )[0];
+
+		// Clear all inputs in clone
+		clone.querySelectorAll( 'input' ).forEach( function( input, index ) {
+			input.value = '';
+		} );
+		// Increment legend
+		legend.innerHTML = 'Color #' + counter;
+		colorsWrapper.append( clone );
+
+		counter++;
 	}
 
 
@@ -49,13 +87,4 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		sassResult.innerHTML = sass;
 	}
 
-	const form = document.getElementById( 'generator' );
-	form.addEventListener( 'submit', e => {
-		e.preventDefault();
-		const colors = getColors();
-		if ( Array.isArray( colors ) && colors.length ) {
-			generateCode( colors );
-			Prism.highlightAll();
-		}
-	} );
 } );

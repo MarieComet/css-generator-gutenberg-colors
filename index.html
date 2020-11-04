@@ -12,55 +12,59 @@
 </head>
 <body>
 	<div class="container">
-		<h1>CSS generator for Gutenberg colors</h1>
-		<p>Fill the form below : for each color, choose a display name, a code (#000000) and a slug...Magic !</p>
-		<h2>Fill colors</h2>
-		<form id="generator" class="wrapper">
-			<div>
+		<div class="page-header">
+			<h1>CSS generator for Gutenberg colors</h1>
+			<p>Fill the form below : for each color, choose a display name, a code (#000000) and a slug...Magic !</p>
+		</div>
+
+		<form id="generator">
+			<h2>Fill colors</h2>
+			<div id="colors" class="wrapper">
 				<fieldset class="color-group">
 					<legend>Color #1</legend>
-					<div class="color">
-						<label for="color_name_1">Color name</label>
-						<input type="text" name="color_name_1" class="color-input" data-type="name">
-					</div>
-					<div class="color">
-						<label for="color_code_1">Color code</label>
-						<input type="text" name="color_code_1" class="color-input" data-type="code">
-					</div>
-					<div class="color">
-						<label for="color_slug_1">Color slug</label>
-						<input type="text" name="color_slug_1" class="color-input" data-type="slug">
-					</div>
+					<label class="color">
+						Color name
+						<input type="text" class="color-input" data-type="name">
+					</label>
+					<label class="color">
+						Color code
+						<input type="text" class="color-input" data-type="code">
+					</label>
+					<label class="color">
+						Color slug
+						<input type="text" class="color-input" data-type="slug">
+					</label>
 				</fieldset>
-			</div>
-			<div>
 				<fieldset class="color-group">
 					<legend>Color #2</legend>
-					<div class="color">
-						<label for="color_name_2">Color name</label>
-						<input type="text" name="color_name_2" class="color-input" data-type="name">
-					</div>
-					<div class="color">
-						<label for="color_code_2">Color code</label>
-						<input type="text" name="color_code_2" class="color-input" data-type="code">
-					</div>
-					<div class="color">
-						<label for="color_slug_2">Color slug</label>
-						<input type="text" name="color_slug_2" class="color-input" data-type="slug">
-					</div>
+					<label class="color">
+						Color name
+						<input type="text" class="color-input" data-type="name">
+					</label>
+					<label class="color">
+						Color code
+						<input type="text" class="color-input" data-type="code">
+					</label>
+					<label class="color">
+						Color slug
+						<input type="text" class="color-input" data-type="slug">
+					</label>
 				</fieldset>
 			</div>
 			<div class="submit-wrapper">
+				<button id="add-color">Add color</button>
 				<input type="submit" name="submit" value="Generate">
 			</div>
 		</form>
+
+		<h2>Results</h2>
 		<div class="wrapper">
 			<div>
-				<h2>CSS</h2>
+				<h3>CSS</h3>
 				<pre><code id="css-result" class="language-css">/* nothing yet... */</code></pre>
 			</div>
 			<div>
-				<h2>SASS</h2>
+				<h3>SASS</h3>
 				<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
 				<pre><code class="language-scss">@each $name, $color in $colors {
 	.has-#{$name}-color {
