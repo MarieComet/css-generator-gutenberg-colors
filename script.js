@@ -7,8 +7,6 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		  colorsWrapper = document.getElementById( 'colors' ),
 		  addColor = document.getElementById( 'add-color' );
 
-	// initial colors counter (2, start at 3)
-	var counter = 3;
 
 	// event on click Add color button
 	addColor.addEventListener( 'click', e => {
@@ -24,6 +22,13 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 			generateCode( colors );
 			Prism.highlightAll(); // highlight new codes
 			document.getElementById( 'results' ).scrollIntoView( { behavior: 'smooth' } ); // scroll to results
+		}
+	} );
+
+	colorsWrapper.addEventListener( 'click', e => {
+		if ( e.target && e.target.matches( '.delete-color' ) ) {
+			e.preventDefault();
+			removeColor( e.target );
 		}
 	} );
 
@@ -56,21 +61,19 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 	* Duplicate fieldset color : clone last color group element
 	*/
 	function cloneColor() {
-		var lastItem = document.querySelector( '.color-group:last-of-type' ),
-			clone = lastItem.cloneNode( true ),
-			legend = clone.getElementsByTagName( 'legend' )[0];
+		var defaultColor = document.getElementById( 'default-color' ),
+			clone = defaultColor.cloneNode( true );
 
-		// Clear all inputs in clone
-		clone.querySelectorAll( 'input' ).forEach( function( input, index ) {
-			input.value = '';
-		} );
-		// Increment legend
-		legend.innerHTML = 'Color #' + counter;
+		// remove ID and add class
+		clone.removeAttribute( 'id' );
+		clone.setAttribute( 'class', 'color-group' );
+
 		colorsWrapper.append( clone );
-
-		counter++;
 	}
 
+	function removeColor( e ) {
+		e.parentElement.remove();		
+	}
 
 	/**
 	* Generate code with array of colors

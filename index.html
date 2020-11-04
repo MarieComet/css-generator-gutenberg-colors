@@ -13,6 +13,22 @@
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+	<fieldset id="default-color">
+		<legend>Color</legend>
+		<label class="color">
+			Display name
+			<input type="text" class="color-input" data-type="name" required>
+		</label>
+		<label class="color">
+			Code
+			<input type="text" class="color-input" data-type="code" required>
+		</label>
+		<label class="color">
+			Slug
+			<input type="text" class="color-input" data-type="slug" required>
+		</label>
+		<button class="delete-color">Remove</button>
+	</fieldset>
 	<div class="container">
 		<div class="page-header">
 			<h1>CSS and PHP generator for Gutenberg Color Palettes</h1>
@@ -22,36 +38,38 @@
 
 		<form id="generator">
 			<h2>Your Colors</h2>
+			<p>All fields are mandatory</p>
 			<div id="colors" class="wrapper">
 				<fieldset class="color-group">
-					<legend>Color #1</legend>
+					<legend>Color</legend>
 					<label class="color">
 						Display name
-						<input type="text" class="color-input" data-type="name" placeholder="Red">
+						<input type="text" class="color-input" data-type="name" placeholder="Red" required>
 					</label>
 					<label class="color">
 						Code
-						<input type="text" class="color-input" data-type="code" placeholder="#920e0e">
+						<input type="text" class="color-input" data-type="code" placeholder="#920e0e" required>
 					</label>
 					<label class="color">
 						Slug
-						<input type="text" class="color-input" data-type="slug" placeholder="red">
+						<input type="text" class="color-input" data-type="slug" placeholder="red" required>
 					</label>
 				</fieldset>
 				<fieldset class="color-group">
-					<legend>Color #2</legend>
+					<legend>Color</legend>
 					<label class="color">
 						Display name
-						<input type="text" class="color-input" data-type="name" placeholder="Green">
+						<input type="text" class="color-input" data-type="name" placeholder="Green" required>
 					</label>
 					<label class="color">
 						Code
-						<input type="text" class="color-input" data-type="code" placeholder="#25920e">
+						<input type="text" class="color-input" data-type="code" placeholder="#25920e" required>
 					</label>
 					<label class="color">
 						Slug
-						<input type="text" class="color-input" data-type="slug" placeholder="green">
+						<input type="text" class="color-input" data-type="slug" placeholder="green" required>
 					</label>
+					<button class="delete-color">Remove</button>
 				</fieldset>
 			</div>
 			<div class="submit-wrapper">
