@@ -71,11 +71,10 @@ input:hover, button:hover, input:focus, button:focus {
 input:focus, button:focus {
 	outline: 1px solid #5c4ae2;
 }
-[type="submit"], button {
-	width: 30%;
-	padding: 10px;
+[type="submit"], #add-color {
+    padding: 10px;
+    min-width: 30%;
 }
-
 [type="submit"] {
 	background: #5c4ae2;
 	color: #fff;
@@ -88,13 +87,12 @@ input:focus, button:focus {
 }
 
 nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     list-style: none;
     margin: 40px 0;
     padding: 0;
 }
 nav ul li {
+	display: inline-block;
 	margin: 5px 10px;
 }
