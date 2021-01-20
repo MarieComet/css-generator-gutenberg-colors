@@ -42,72 +42,76 @@
 			<p>Fill the form below : for each color, choose a Name, a Color, a Slug, and click on « Generate » ... Magic !</p>
 		</div>
 
-		<form id="generator">
-			<h2>Your Colors</h2>
-			<p>All fields are required</p>
-			<div id="colors" class="wrapper">
-				<fieldset class="color-group">
-					<legend>Color</legend>
-					<label class="color">
-						Name
-						<input type="text" class="color-input" data-type="name" placeholder="Red" required>
-					</label>
-					<label class="color">
-						Color
-						<input type="text" class="color-input" data-type="code" placeholder="#920e0e" required>
-					</label>
-					<label class="color">
-						Slug
-						<input type="text" class="color-input" data-type="slug" placeholder="red" required>
-					</label>
-				</fieldset>
-				<fieldset class="color-group">
-					<legend>Color</legend>
-					<label class="color">
-						Name
-						<input type="text" class="color-input" data-type="name" placeholder="Green" required>
-					</label>
-					<label class="color">
-						Color
-						<input type="text" class="color-input" data-type="code" placeholder="#25920e" required>
-					</label>
-					<label class="color">
-						Slug
-						<input type="text" class="color-input" data-type="slug" placeholder="green" required>
-					</label>
-					<button class="delete-color">❌ Remove</button>
-				</fieldset>
-			</div>
-			<div class="submit-wrapper">
-				<button id="add-color">➕ Add new color</button>
-				<input type="submit" name="submit" value="🎉 Generate">
-			</div>
-		</form>
-
-		<h2 id="results">Results</h2>
 		<div class="wrapper">
+
+			<form id="generator">
+				<h2>Your Colors</h2>
+				<p>All fields are required</p>
+				<div id="colors" class="wrapper">
+					<fieldset class="color-group">
+						<legend>Color</legend>
+						<label class="color">
+							Name
+							<input type="text" class="color-input" data-type="name" placeholder="Red" required>
+						</label>
+						<label class="color">
+							Color
+							<input type="text" class="color-input" data-type="code" placeholder="#920e0e" required>
+						</label>
+						<label class="color">
+							Slug
+							<input type="text" class="color-input" data-type="slug" placeholder="red" required>
+						</label>
+					</fieldset>
+					<fieldset class="color-group">
+						<legend>Color</legend>
+						<label class="color">
+							Name
+							<input type="text" class="color-input" data-type="name" placeholder="Green" required>
+						</label>
+						<label class="color">
+							Color
+							<input type="text" class="color-input" data-type="code" placeholder="#25920e" required>
+						</label>
+						<label class="color">
+							Slug
+							<input type="text" class="color-input" data-type="slug" placeholder="green" required>
+						</label>
+						<button class="delete-color">❌ Remove</button>
+					</fieldset>
+				</div>
+				<div class="submit-wrapper">
+					<button id="add-color">➕ Add new color</button>
+					<input type="submit" name="submit" value="🎉 Generate">
+				</div>
+			</form>
+
 			<div>
-				<h3>CSS</h3>
-				<pre><code id="css-result" class="language-css">/* nothing yet... */</code></pre>
+				<h2 id="results">Results</h2>
+				<div>
+					<h3>CSS</h3>
+					<pre><code id="css-result" class="language-css">/* nothing yet... */</code></pre>
+				</div>
+				<div>
+					<h3>SASS</h3>
+					<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
+					<pre><code class="language-scss">@each $name, $color in $colors {
+		.has-#{$name}-color {
+			color: $color;
+		}
+		.has-#{$name}-background-color {
+			background-color: $color;
+		}
+	}</code></pre>
+				</div>
+				<div>
+					<h3>PHP</h3>
+					<pre><code id="php-result" class="language-php">/* nothing yet... */</code></pre>
+					<a href="https://developer.wordpress.org/reference/functions/add_theme_support/"><code>add_theme_support</code> documentation</a>
+				</div>
 			</div>
-			<div>
-				<h3>SASS</h3>
-				<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
-				<pre><code class="language-scss">@each $name, $color in $colors {
-	.has-#{$name}-color {
-		color: $color;
-	}
-	.has-#{$name}-background-color {
-		background-color: $color;
-	}
-}</code></pre>
-			</div>
-			<div>
-				<h3>PHP</h3>
-				<pre><code id="php-result" class="language-php">/* nothing yet... */</code></pre>
-				<a href="https://developer.wordpress.org/reference/functions/add_theme_support/"><code>add_theme_support</code> documentation</a>
-			</div>
-		</div>
+
+		</div><!-- .wrapper -->
 
 		<footer>
 			<nav aria-label="Footer navigation">
