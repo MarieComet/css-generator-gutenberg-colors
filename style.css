@@ -35,20 +35,20 @@ fieldset legend {
 	font-weight: 700;
 	font-size: 18px;
 }
-#default-color {
+fieldset label {
+	display: block;
+    margin: 0 0 10px 0;
+}
+.default-fieldset {
 	display: none;
 }
-.delete-color {
+.delete-fieldset {
     position: absolute;
     bottom: -2px;
     right: -12px;
     padding: 5px 10px;
     width: auto;
     font-size: 16px;
-}
-.color {
-	display: block;
-    margin: 0 0 10px 0;
 }
 .submit-wrapper {
 	margin: 20px 0;
@@ -71,7 +71,7 @@ input:hover, button:hover, input:focus, button:focus {
 input:focus, button:focus {
 	outline: 1px solid #5c4ae2;
 }
-[type="submit"], #add-color {
+[type="submit"], .add-fieldset {
     padding: 10px;
     min-width: 30%;
 }

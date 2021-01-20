@@ -19,21 +19,37 @@
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<fieldset id="default-color">
+	<fieldset id="default-color" class="default-fieldset" data-type="color">
 		<legend>Color</legend>
-		<label class="color">
+		<label>
 			Name
-			<input type="text" class="color-input" data-type="name" required>
+			<input type="text" class="fieldset-input" data-type="name" required>
 		</label>
-		<label class="color">
+		<label>
 			Color
-			<input type="text" class="color-input" data-type="code" required>
+			<input type="text" class="fieldset-input" data-type="code" required>
 		</label>
-		<label class="color">
+		<label>
 			Slug
-			<input type="text" class="color-input" data-type="slug" required>
+			<input type="text" class="fieldset-input" data-type="slug" required>
 		</label>
-		<button class="delete-color">❌ Remove</button>
+		<button class="delete-fieldset">❌ Remove</button>
+	</fieldset>
+	<fieldset id="default-font" class="default-fieldset" data-type="font">
+		<legend>Font</legend>
+		<label>
+			Name
+			<input type="text" class="fieldset-input" data-type="name" required>
+		</label>
+		<label>
+			Size
+			<input type="text" class="fieldset-input" data-type="code" required>
+		</label>
+		<label>
+			Slug
+			<input type="text" class="fieldset-input" data-type="slug" required>
+		</label>
+		<button class="delete-fieldset">❌ Remove</button>
 	</fieldset>
 	<div class="container">
 		<div class="page-header">
@@ -45,43 +61,40 @@
 		<div class="wrapper">
 
 			<form id="generator">
-				<h2>Your Colors</h2>
-				<p>All fields are required</p>
-				<div id="colors" class="wrapper">
-					<fieldset class="color-group">
+
+				<div id="fieldsets-color" class="fieldsets-wrapper wrapper">
+					<h2>Your Colors</h2>
+					<fieldset class="fieldset-group" data-type="color">
 						<legend>Color</legend>
-						<label class="color">
+						<label>
 							Name
-							<input type="text" class="color-input" data-type="name" placeholder="Red" required>
+							<input type="text" class="fieldset-input" data-type="name" placeholder="Red" required>
 						</label>
-						<label class="color">
-							Color
-							<input type="text" class="color-input" data-type="code" placeholder="#920e0e" required>
+						<label>
+							Value
+							<input type="text" class="fieldset-input" data-type="code" placeholder="#920e0e" required>
 						</label>
-						<label class="color">
-							Slug
-							<input type="text" class="color-input" data-type="slug" placeholder="red" required>
-						</label>
-					</fieldset>
-					<fieldset class="color-group">
-						<legend>Color</legend>
-						<label class="color">
-							Name
-							<input type="text" class="color-input" data-type="name" placeholder="Green" required>
-						</label>
-						<label class="color">
-							Color
-							<input type="text" class="color-input" data-type="code" placeholder="#25920e" required>
-						</label>
-						<label class="color">
-							Slug
-							<input type="text" class="color-input" data-type="slug" placeholder="green" required>
-						</label>
-						<button class="delete-color">❌ Remove</button>
 					</fieldset>
 				</div>
+				<button class="add-fieldset" data-type="color">➕ Add new color</button>
+
+				<div id="fieldsets-font" class="fieldsets-wrapper wrapper">
+					<h2>Your Fonts</h2>
+					<fieldset class="fieldset-group" data-type="font">
+						<legend>Font</legend>
+						<label>
+							Name
+							<input type="text" class="fieldset-input" data-type="name" placeholder="Huge" required>
+						</label>
+						<label>
+							Size
+							<input type="text" class="fieldset-input" data-type="code" placeholder="40" required>
+						</label>
+					</fieldset>
+				</div>
+				<button class="add-fieldset" data-type="font">➕ Add new font</button>
+
 				<div class="submit-wrapper">
-					<button id="add-color">➕ Add new color</button>
 					<input type="submit" name="submit" value="🎉 Generate">
 				</div>
 			</form>
@@ -96,13 +109,18 @@
 					<h3>SASS</h3>
 					<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
 					<pre><code class="language-scss">@each $name, $color in $colors {
-		.has-#{$name}-color {
-			color: $color;
-		}
-		.has-#{$name}-background-color {
-			background-color: $color;
-		}
-	}</code></pre>
+	.has-#{$name}-color {
+		color: $color;
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+@each $size-name, $size in $font-sizes {
+    .has-#{$size-name}-font-size {
+        font-size: $size;
+    }
+}</code></pre>
 				</div>
 				<div>
 					<h3>PHP</h3>
