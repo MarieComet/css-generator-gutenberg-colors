@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>🎨 CSS and PHP generator for Gutenberg Color Palettes</title>
+	<title>🎨 CSS and PHP generator for Gutenberg Color Palettes and Font sizes</title>
 	<meta name="description" content="A small tool to generate CSS and PHP declarations of color palettes for the WordPress editor (Gutenberg).">
 
 	<meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +42,7 @@
 			<input type="text" class="fieldset-input" data-type="name" required>
 		</label>
 		<label>
-			Size
+			Value
 			<input type="text" class="fieldset-input" data-type="code" required>
 		</label>
 		<label>
@@ -53,9 +53,9 @@
 	</fieldset>
 	<div class="container">
 		<div class="page-header">
-			<h1>CSS and PHP generator for Gutenberg Color Palettes</h1>
-			<p>A small tool to generate CSS/SASS and PHP declarations of <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes">color palettes</a> for the WordPress editor (Gutenberg).</p>
-			<p>Fill the form below : for each color, choose a Name, a Color, a Slug, and click on « Generate » ... Magic !</p>
+			<h1>Code generator for Gutenberg Color Palettes and Font Sizes</h1>
+			<p>A small tool to generate CSS/SASS and PHP declarations of <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes">color palettes</a> and <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-font-sizes">font sizes</a> for the WordPress editor (Gutenberg).</p>
+			<p>Fill the form below : for each color or font size, choose a Name, a Value, and click on « Generate ».</p>
 		</div>
 
 		<div class="wrapper">
@@ -63,7 +63,7 @@
 			<form id="generator">
 
 				<div id="fieldsets-color" class="fieldsets-wrapper wrapper">
-					<h2>Your Colors</h2>
+					<h2>Colors</h2>
 					<fieldset class="fieldset-group" data-type="color">
 						<legend>Color</legend>
 						<label>
@@ -79,7 +79,7 @@
 				<button class="add-fieldset" data-type="color">➕ Add new color</button>
 
 				<div id="fieldsets-font" class="fieldsets-wrapper wrapper">
-					<h2>Your Fonts</h2>
+					<h2>Font Sizes</h2>
 					<fieldset class="fieldset-group" data-type="font">
 						<legend>Font</legend>
 						<label>
@@ -87,7 +87,7 @@
 							<input type="text" class="fieldset-input" data-type="name" placeholder="Huge" required>
 						</label>
 						<label>
-							Size
+							Value
 							<input type="text" class="fieldset-input" data-type="code" placeholder="40" required>
 						</label>
 					</fieldset>
@@ -108,7 +108,8 @@
 				<div>
 					<h3>SASS</h3>
 					<pre><code id="sass-result" class="language-scss">/* nothing yet... */</code></pre>
-					<pre><code class="language-scss">@each $name, $color in $colors {
+					<pre><code class="language-scss">/* Generate Colors classes */
+@each $name, $color in $colors {
 	.has-#{$name}-color {
 		color: $color;
 	}
@@ -116,6 +117,7 @@
 		background-color: $color;
 	}
 }
+/* Generate Fonts classes */
 @each $size-name, $size in $font-sizes {
     .has-#{$size-name}-font-size {
         font-size: $size;

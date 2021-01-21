@@ -6,7 +6,7 @@ body, input, button {
 h2 {
 	border-top: 2px solid #b0a6ff;
 	padding-top: 20px;
-	margin: 40px 0 20px 0;
+	margin: 20px 0 10px 0;
     text-align: center;
 }
 h3 {
@@ -18,8 +18,8 @@ h3 {
 }
 .wrapper {
     display: grid;
-    gap: 15px 15px;
-    grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+    gap: 15px 25px;
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 }
 .page-header {
 	text-align: center;
@@ -29,7 +29,7 @@ fieldset {
 	position: relative;
 	padding: 15px;
 	border: 2px dotted #5c4ae2;
-	min-height: 135px;
+	min-height: 105px;
 }
 fieldset legend {
 	font-weight: 700;
@@ -84,6 +84,9 @@ input:focus, button:focus {
 	background-color: #261e66;
 	color: #fff;
 	text-decoration: none;
+}
+.add-fieldset {
+	margin: 10px 0;
 }
 
 nav ul {

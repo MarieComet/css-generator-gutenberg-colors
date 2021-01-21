@@ -123,9 +123,10 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 			php = "";
 
 		if ( Array.isArray( values.colors ) && values.colors.length ) {
-			sass += '/* colors variables */\n$colors: ( ';
+			sass += '/* Colors variables */\n$colors: ( ';
+			php += '/* Colors theme support */\n';
 			php += "add_theme_support( 'editor-color-palette', array(\n";
-			css += '/* colors */\n';
+			css += '/* Colors */\n';
 			values.colors.forEach( function( color, index ) {
 				const slug = slugify( color.name );
 				css += '.has-' + slug + '-background-color {\n\tbackground-color: ' + color.code + ';\n}\n';
@@ -141,9 +142,10 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 		}
 
 		if ( Array.isArray( values.fonts ) && values.fonts.length ) {
-			sass += '\n/* font sizes variables */\n$fonts: ( ';
+			sass += '\n/* Font sizes variables */\n$fonts: ( ';
+			php += '/* Font sizes theme support */\n';
 			php += "add_theme_support( 'editor-font-sizes', array(\n";
-			css += '/* fonts */\n';
+			css += '/* Fonts */\n';
 			values.fonts.forEach( function( font, index ) {
 				const slug = slugify( font.name );
 				css += '.has-' + slug + '-font-size {\n\tfont-size: ' + font.code + 'px;\n}\n';
