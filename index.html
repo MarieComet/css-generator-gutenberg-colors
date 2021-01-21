@@ -47,7 +47,8 @@
 		<div class="page-header">
 			<h1>Code generator for Gutenberg Color Palettes and Font Sizes</h1>
 			<p>A small tool to generate CSS/SASS and PHP declarations of <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes">color palettes</a> and <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-font-sizes">font sizes</a> for the WordPress editor (Gutenberg).</p>
-			<p>Fill the form below : for each color or font size, choose a Name, a Value, and click on « Generate ».</p>
+			<p>Fill the form below : for each color or font size, choose a Name, a Value, and click on « Generate ». <a href="#how-to">How to use this code ?</a></p>
+			
 		</div>
 
 		<div class="wrapper">
@@ -124,6 +125,16 @@
 			</div>
 
 		</div><!-- .wrapper -->
+
+		<div id="how-to">
+			<h2>How to use this code ?</h2>
+			<p>After generating the code for your colors and/or font sizes, you will need to copy the different codes and paste them in the appropriate places :</p>
+			<ul>
+				<li>CSS code should go into a stylesheet file, in most cases <code>style.css</code> file of your theme.</li>
+				<li><a href="https://sass-lang.com/">SASS</a> code is only useful if you use it in your theme.</li>
+				<li>PHP code should go in the <code>functions.php</code> file of your theme. Learn more about theme supports in the <a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/">developer documentation.</a></li>
+			</ul>
+		</div>
 
 		<footer>
 			<nav aria-label="Footer navigation">
