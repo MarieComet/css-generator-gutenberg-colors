@@ -51,8 +51,14 @@ fieldset label {
     font-size: 16px;
 }
 .submit-wrapper {
+	display: inline-block;
+	position: sticky;
+	bottom: 5px;
 	margin: 20px 0;
 	text-align: center;
+}
+.submit-wrapper input {
+	min-width: 150px;
 }
 input, button {
     border-radius: 0px;
