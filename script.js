@@ -135,7 +135,7 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 				if ( index !== values.colors.length - 1 ) {
 					sass += ', '
 				}
-				php += "\tarray(\n\t\t'name' => __( '" + color.name + "', 'textdomain' ),\n\t\t'slug' => '" + slug + "',\n\t\t'color' => '" + color.code + "', \n\t),\n"
+				php += "\tarray(\n\t\t'name' => __( '" + color.name + "', '" + color.textdomain + "' ),\n\t\t'slug' => '" + slug + "',\n\t\t'color' => '" + color.code + "', \n\t),\n"
 			} );
 			sass += ' );';
 			php += ') );\n';
@@ -153,7 +153,7 @@ document.addEventListener( 'DOMContentLoaded', (e) => {
 				if ( index !== values.fonts.length - 1 ) {
 					sass += ', '
 				}
-				php += "\tarray(\n\t\t'name' => __( '" + font.name + "', 'textdomain' ),\n\t\t'slug' => '" + slug + "',\n\t\t'size' => '" + font.code + "', \n\t),\n"
+				php += "\tarray(\n\t\t'name' => __( '" + font.name + "', '" + font.textdomain + "' ),\n\t\t'slug' => '" + slug + "',\n\t\t'size' => '" + font.code + "', \n\t),\n"
 			} );
 			sass += ' );';
 			php += ') );';
